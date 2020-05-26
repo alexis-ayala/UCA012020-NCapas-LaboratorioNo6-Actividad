@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>Agregar Estudiante</title>
+	<style>
+		body{
+			display:block;
+			padding:0;
+			margin:0;
+			border:0;
+			background-color:#f0f0f0;
+		}
+		form{
+			display:block;
+			background-color:#fff;
+			width:600px;
+			margin:50px auto;
+			padding:10px;
+		}
+		form label{
+			min-width:80px;
+			display:block;
+		}
+		form input{
+			min-width:250px;
+			display:block;
+			border:1px #ddd solid;
+			border-radius:3px;
+			padding:8px;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" th:action="@{/registrar}" th:object="${estudiante}">
+		<h3>Registrar Estudiante</h3>
+		<table>
+			<tr>
+				<td>
+					<label for="nombre">Nombre:</label>
+				</td>
+				<td>
+					<input id="nombre" type="text" placeholder="Ingrese nombre" th:field="*{nombre}" />
+				</td>
+				<td>
+					<span th:errors="*{nombre}" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="apellido">Apellido:</label>
+				</td>
+				<td>
+					<input id="apellido" type="text" placeholder="Ingrese apellido" th:field="*{apellido}" />
+				</td>
+				<td>
+					<span th:errors="*{apellido}" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+					<td>
+					<label for="carne">Carne:</label>
+				</td>
+				<td>
+					<input id="carne" type="text" placeholder="Ingrese carne" th:field="*{carne}" />
+				</td>
+				<td>
+					<span th:errors="*{carne}" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="carrera">Carrera:</label>
+				</td>
+				<td>
+					<input id="carrera" type="text" placeholder="Ingrese carrera" th:field="*{carrera}" />
+				</td>
+				<td>
+					<span th:errors="*{carrera}" style="color:red;"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a th:href="@{/listado}">Listado</a>
+				</td>
+				<td>
+					<input type="hidden" th:field="*{cUsuario}" />
+					<button type="submit">
+		        		Guardar Estudiante
+		        	</button>
+				</td>
+				<td>
+					<a th:href="@{/borrar}">Borrar Estudiante</a>
+				</td>
+			</tr>
+		</table>
+    </form>
+</body>
+</html>

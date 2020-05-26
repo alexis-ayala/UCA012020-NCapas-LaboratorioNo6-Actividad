@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>Borrar Estudiante</title>
+	<style>
+		body{
+			display:block;
+			padding:0;
+			margin:0;
+			border:0;
+			background-color:#f0f0f0;
+		}
+		form{
+			display:block;
+			background-color:#fff;
+			width:600px;
+			margin:50px auto;
+			padding:10px;
+		}
+		form label{
+			min-width:80px;
+			display:block;
+		}
+		form input{
+			min-width:250px;
+			display:block;
+			border:1px #ddd solid;
+			border-radius:3px;
+			padding:8px;
+		}
+	</style>
+</head>
+<body>
+	<form method="get" th:action="@{/eliminar}">
+		<h3>Borrar Estudiante</h3>
+		<table>
+			<tr>
+				<td>
+					<label for="codigo">Código Estudiante:</label>
+				</td>
+				<td>
+					<input id="codigo" type="number" placeholder="Ingrese código estudiante" name="codigo" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<a th:href="@{/}">Regresar</a>
+				</td>
+				<td>
+					<button type="submit">
+		        		Borrar Estudiante
+		        	</button>
+				</td>
+			</tr>
+		</table>
+    </form>
+</body>
+</html>
